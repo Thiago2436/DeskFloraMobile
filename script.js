@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   
     sairButton.addEventListener("click", () => {
-      const confirmacao = confirm("Tem certeza de que deseja sair?");
+      const confirmacao = confirm("Tem certeza de que deseja Limpar os dados ?");
   
       if (confirmacao) {
         inventario = [];
