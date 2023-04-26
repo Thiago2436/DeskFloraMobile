@@ -1,60 +1,59 @@
-/* Estilos padrão */
-
+/* CSS padrão para desktop */
 body {
 	font-family: Arial, sans-serif;
 	background-color: #f0f0f0;
-}
-
-table {
+  }
+  
+  table {
 	border-collapse: collapse;
 	width: 100%;
-}
-
-th, td {
+  }
+  
+  th, td {
 	text-align: left;
 	padding: 8px;
 	border: 1px solid #ddd;
-}
-
-tr:nth-child(even) {
+  }
+  
+  tr:nth-child(even) {
 	background-color: #f2f2f2;
-}
-
-th {
+  }
+  
+  th {
 	background-color: #4CAF50;
 	color: white;
-}
-
-form {
+  }
+  
+  form {
 	width: 80%;
 	margin: auto;
 	background-color: #fff;
 	padding: 20px;
 	box-shadow: 0px 0px 10px #aaa;
-}
-
-h2 {
+  }
+  
+  h2 {
 	margin-top: 20px;
-}
-
-label {
+  }
+  
+  label {
 	display: block;
 	margin-top: 10px;
-}
-
-input[type="text"],
-input[type="number"],
-input[type="date"],
-textarea {
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  textarea {
 	width: 100%;
 	padding: 5px;
 	border: 1px solid #ccc;
 	border-radius: 3px;
 	box-sizing: border-box;
 	margin-top: 5px;
-}
-
-button {
+  }
+  
+  button {
 	background-color: #4CAF50;
 	color: #fff;
 	border: none;
@@ -63,40 +62,37 @@ button {
 	margin-top: 20px;
 	cursor: pointer;
 	transition: background-color 0.3s;
-}
-
-button:hover {
+  }
+  
+  button:hover {
 	background-color: #3e8e41;
-}
-
-/* Media queries */
-
-@media (max-width: 768px) {
-	table, thead, tbody, th, td, tr {
-		display: block;
+  }
+  
+  /* CSS para telas menores de celular */
+  @media (max-width: 480px) {
+	table {
+	  font-size: 14px;
 	}
-	
-	thead tr {
-		position: absolute;
-		top: -9999px;
-		left: -9999px;
+  
+	th, td {
+	  padding: 6px;
 	}
-	
-	td {
-		border: none;
-		border-bottom: 1px solid #ddd;
-		position: relative;
-		padding-left: 50%;
+  
+	form {
+	  width: 95%;
+	  padding: 10px;
 	}
-	
-	td:before {
-		position: absolute;
-		top: 6px;
-		left: 6px;
-		width: 45%;
-		padding-right: 10px;
-		white-space: nowrap;
-		content: attr(data-column);
-		font-weight: bold;
+  
+	input[type="text"],
+	input[type="number"],
+	input[type="date"],
+	textarea {
+	  font-size: 14px;
 	}
-}
+  
+	button {
+	  padding: 8px 16px;
+	  margin-top: 10px;
+	}
+  }
+  
