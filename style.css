@@ -1,0 +1,102 @@
+/* Estilos padrão */
+
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f0f0f0;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td {
+	text-align: left;
+	padding: 8px;
+	border: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+th {
+	background-color: #4CAF50;
+	color: white;
+}
+
+form {
+	width: 80%;
+	margin: auto;
+	background-color: #fff;
+	padding: 20px;
+	box-shadow: 0px 0px 10px #aaa;
+}
+
+h2 {
+	margin-top: 20px;
+}
+
+label {
+	display: block;
+	margin-top: 10px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+textarea {
+	width: 100%;
+	padding: 5px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	box-sizing: border-box;
+	margin-top: 5px;
+}
+
+button {
+	background-color: #4CAF50;
+	color: #fff;
+	border: none;
+	border-radius: 3px;
+	padding: 10px 20px;
+	margin-top: 20px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+button:hover {
+	background-color: #3e8e41;
+}
+
+/* Media queries */
+
+@media (max-width: 768px) {
+	table, thead, tbody, th, td, tr {
+		display: block;
+	}
+	
+	thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	td {
+		border: none;
+		border-bottom: 1px solid #ddd;
+		position: relative;
+		padding-left: 50%;
+	}
+	
+	td:before {
+		position: absolute;
+		top: 6px;
+		left: 6px;
+		width: 45%;
+		padding-right: 10px;
+		white-space: nowrap;
+		content: attr(data-column);
+		font-weight: bold;
+	}
+}
