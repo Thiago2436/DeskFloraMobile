@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
         navigator.geolocation.getCurrentPosition(function(position) {
           const latitude = position.coords.latitude;
           const longitude = position.coords.longitude;
-          const localizacao = `Lat: ${latitude}, Long: ${longitude}`;
+          const localizacao = `Lat: ${latitude} Long: ${longitude}`;
       
           // Preenche o campo "Localização" com os dados do GPS
           localizacaoInput.value = localizacao;
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
         navigator.geolocation.getCurrentPosition(function(position) {
           const latitude = position.coords.latitude;
           const longitude = position.coords.longitude;
-          const localizacao = `Lat: ${latitude}, Long: ${longitude}`;
+          const localizacao = `Lat: ${latitude} Long: ${longitude}`;
       
           // Preenche o campo "Localização" com os dados do GPS
           localizacaoInput.value = localizacao;
@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function() {
       if (inventario.length > 0) {
   
         // Cabeçalho da tabela
-        const header = "Espécie, Diâmetro (cm), Altura (m), Localizacao(GPS), Sanidade \n";
+        const header = "Espécie, Diâmetro (cm), Altura (m), Localizacao(GPS),Sanidade \n";
   
   
         const csvContent = "data:text/csv;charset=utf-8," 
