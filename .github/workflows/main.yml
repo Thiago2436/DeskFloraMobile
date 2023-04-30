@@ -1,0 +1,25 @@
+name: Merge to gh-pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        ref: refs/heads/gh-pages
+        path: gh-pages
+        fetch-depth: 0
+
+    - name: Merge with master
+      run: |
+        git checkout -B gh-pages
+        git fetch origin master
+        git merge --no-commit --no-ff origin/master
+        git commit -m "Merge branch 'master' into gh-pages"
+        git push origin gh-pages
