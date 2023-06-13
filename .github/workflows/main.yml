@@ -22,7 +22,7 @@ jobs:
         git config --global user.name "${{ github.actor }}"
         git config --global user.email "thiagomartins.florestal@gmail.com"
         git checkout -b gh-pages
-       // sudo git push --set-upstream origin gh-pages
+       //sudo git push --set-upstream origin gh-pages
     - name: Fazer merge do código
       run: |
         git checkout gh-pages
