@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
   </head>
   <body>
-    <h1>Prancheta Eletrônica para Inventário Florestal</h1>
+    <h1># Prancheta Eletrônica para Inventário Florestal</h1>
     <p>Este projeto é uma prancheta eletrônica para coleta de dados de inventário florestal, desenvolvido por Thiago2436.</p>
     <p>O código fonte do projeto está disponível no GitHub, e você pode contribuir para o seu desenvolvimento seguindo as instruções abaixo:</p>
-        <h2>Como clonar o repositório</h2>
+        <h2> # Como clonar o repositório</h2>
     <ol>
       <li>Abra o terminal em seu computador;</li>
       <li>Navegue até o diretório onde deseja armazenar o projeto;</li>
