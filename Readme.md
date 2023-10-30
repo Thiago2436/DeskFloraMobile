@@ -7,6 +7,9 @@
     <h1># Prancheta Eletrônica para Inventário Florestal</h1>
     <p>Este projeto é uma prancheta eletrônica para coleta de dados de inventário florestal, desenvolvido por Thiago2436.</p>
     <p>O código fonte do projeto está disponível no GitHub, e você pode contribuir para o seu desenvolvimento seguindo as instruções abaixo:</p>
+       <br>  <h2>Como utilizar o app</h2>
+    <p>Você pode utilizar o app através do link abaixo:</p>
+    <a href="https://thiago2436.github.io/DeskFloraMobile/">Clique AQUI</a>
         <h2> # Como clonar o repositório</h2>
     <ol>
       <li>Abra o terminal em seu computador;</li>
@@ -24,8 +27,6 @@
       <li>Envie as alterações para o repositório remoto utilizando o comando <code>git push origin sua-branch</code>, onde "sua-branch" é o nome da branch que você criou;</li>
       <li>Crie um pull request para que suas alterações sejam revisadas e integradas ao projeto principal.</li>
     </ol>
-        <h2>Como utilizar o app</h2>
-    <p>Você pode utilizar o app através do link abaixo:</p>
-    <a href="https://thiago2436.github.io/DeskFloraMobile/">Clique AQUI</a>
+   
   </body>
 </html>
