@@ -40,7 +40,8 @@ stages:
                 echo "Stopping the old container using port $PORT..."
                 docker stop $(docker ps -q --filter "ancestor=thiagomartinsemartins/deskflora" --filter "publish=$PORT:80") || true
             fi
-
+            echo "parando container"
+            docker stop $(docker ps -q --filter "ancestor=thiagomartinsemartins/deskflora" --filter "publish=$PORT:80") || true
             echo "Pulling the new image from Docker Hub..."
             docker pull thiagomartinsemartins/deskflora:$(tag)
             echo "Starting the new container..."
