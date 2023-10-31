@@ -33,13 +33,21 @@ stages:
         name: Default
         vmImage: ubuntu-latest
       steps:
-      - script: |
-          echo "Parando o contêiner antigo..."
-          docker stop $(docker ps -q --filter ancestor=thiagomartinsemartins/deskflora) || true
-          echo "Removendo o contêiner antigo..."
-          docker rm $(docker ps -aq --filter ancestor=thiagomartinsemartins/deskflora) || true
-          echo "Puxando a nova imagem do Docker Hub..."
-          docker pull thiagomartinsemartins/deskflora:$(tag)
-          echo "Iniciando o novo contêiner..."
-          docker run -d -p 8080:80 thiagomartinsemartins/deskflora:$(tag)
-        displayName: 'Implantar no servidor'
+        - script: |
+            PORT=8080
+            if sudo lsof -Pi :$PORT -sTCP:LISTEN -t >/dev/null; then
+                echo "Port $PORT is already in use."
+                PID=$(sudo lsof -t -i:$PORT)
+                echo "Killing the process using port $PORT..."
+                sudo kill -9 $PID
+            fi
+
+            echo "Parando o contêiner antigo..."
+            docker stop $(docker ps -q --filter ancestor=thiagomartinsemartins/deskflora) || true
+            echo "Removendo o contêiner antigo..."
+            docker rm $(docker ps -aq --filter ancestor=thiagomartinsemartins/deskflora) || true
+            echo "Puxando a nova imagem do Docker Hub..."
+            docker pull thiagomartinsemartins/deskflora:$(tag)
+            echo "Iniciando o novo contêiner..."
+            docker run -d -p $PORT:80 thiagomartinsemartins/deskflora:$(tag)
+          displayName: 'Deploy container'
