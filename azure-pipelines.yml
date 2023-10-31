@@ -35,7 +35,7 @@ stages:
       steps:
         - script: |
             echo "parando container"
-            docker stop $(docker ps -q --filter "ancestor=thiagomartinsemartins/deskflora") 
+            docker stop $(docker ps -q --filter "ancestor=thiagomartinsemartins/deskflora" --filter "publish=8080:80") 
             echo "Pulling the new image from Docker Hub..."
             docker pull thiagomartinsemartins/deskflora:$(tag)
             echo "Starting the new container..."
