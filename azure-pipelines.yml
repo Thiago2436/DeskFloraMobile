@@ -38,6 +38,8 @@ stages:
         vmImage: ubuntu-latest
       steps:
       - script: |
-          docker pull thiagomartinsemartins/deskflora:latest
-          docker run -d -p 8080:80 thiagomartinsemartins/deskflora:latest
+          echo "Puxando a imagem do Docker Hub..."
+          docker pull thiagomartinsemartins/deskflora
+          echo "Iniciando o contêiner..."
+          docker run -d -p 8080:80 thiagomartinsemartins/deskflora
         displayName: 'Implantar no servidor'
