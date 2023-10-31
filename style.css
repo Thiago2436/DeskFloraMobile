@@ -19,11 +19,16 @@ th, td {
 }
 
 /* Estilos para as colunas da tabela */
-th:nth-child(1), td:nth-child(1),
-th:nth-child(2), td:nth-child(2),
-th:nth-child(3), td:nth-child(3),
-th:nth-child(4), td:nth-child(4),
-th:nth-child(5), td:nth-child(5) {
+th:nth-child(1),
+td:nth-child(1),
+th:nth-child(2),
+td:nth-child(2),
+th:nth-child(3),
+td:nth-child(3),
+th:nth-child(4),
+td:nth-child(4),
+th:nth-child(5),
+td:nth-child(5) {
   width: 20%;
 }
 
@@ -34,20 +39,20 @@ form {
   background-color: #333;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada */
 }
 
 h1 {
   font-size: 28px;
   text-align: center;
   margin-top: 20px;
-  color: #44dd66; /* Verde */
+  color: #3a9b65; /* Tom mais escuro de verde */
 }
 
 h2 {
   font-size: 24px;
   margin-top: 20px;
-  color: #44dd66; /* Verde */
+  color: #3a9b65; /* Tom mais escuro de verde */
 }
 
 label {
@@ -71,18 +76,18 @@ textarea {
 }
 
 button {
-  background-color: #44dd66; /* Verde */
+  background-color: #2f7e49; /* Verde mais escuro */
   color: #fff;
   border: none;
   border-radius: 5px;
   padding: 12px 24px;
   margin-top: 20px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s; /* Efeito de transição suave */
 }
 
 button:hover {
-  background-color: #3ca057; /* Tonalidade mais escura do verde */
+  background-color: #2a6c41; /* Tonalidade mais escura do verde */
 }
 
 /* Ajustes para telas maiores */
@@ -115,7 +120,7 @@ button:hover {
   padding: 12px 24px;
   margin-top: 20px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s; /* Efeito de transição suave */
 }
 
 #download-excel:hover,
