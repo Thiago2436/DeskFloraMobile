@@ -39,7 +39,7 @@ stages:
       steps:
       - script: |
           echo "Puxando a imagem do Docker Hub..."
-          docker pull thiagomartinsemartins/deskflora
+          docker pull thiagomartinsemartins/deskflora:$(tag)
           echo "Iniciando o contêiner..."
-          docker run -d -p 8080:80 thiagomartinsemartins/deskflora
+          docker run -d -p 8080:80 thiagomartinsemartins/deskflora:$(tag)
         displayName: 'Implantar no servidor'
