@@ -34,9 +34,6 @@ stages:
         vmImage: ubuntu-latest
       steps:
         - script: |
-        
-# Remove o contêiner se estiver parado, o comando será "silenciosamente" ignorado se o contêiner não existir        
-# Para o contêiner se estiver em execução, o comando será "silenciosamente" ignorado se o contêiner não existir
             echo "Parando o contêiner existente (se estiver em execução)..."
             docker stop deskflora || true                 
             echo "Removendo o contêiner existente (se estiver parado)..."
