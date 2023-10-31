@@ -1,8 +1,8 @@
 /* Fonte do GNOME */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f2f2f2;
-  color: #333;
+  background-color: #222;
+  color: #fff;
 }
 
 /* Tabela com bordas mais suaves */
@@ -15,7 +15,7 @@ table {
 th, td {
   text-align: left;
   padding: 12px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #444;
 }
 
 /* Estilos para as colunas da tabela */
@@ -27,33 +27,33 @@ th:nth-child(5), td:nth-child(5) {
   width: 20%;
 }
 
-/* Formulário com aparência mais clara e bordas arredondadas */
+/* Formulário mais escuro com bordas arredondadas e sombras */
 form {
   width: 90%;
   margin: 20px auto;
-  background-color: #fff;
+  background-color: #333;
   padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
   font-size: 28px;
   text-align: center;
   margin-top: 20px;
-  color: #333;
+  color: #44dd66; /* Verde */
 }
 
 h2 {
   font-size: 24px;
   margin-top: 20px;
-  color: #333;
+  color: #44dd66; /* Verde */
 }
 
 label {
   display: block;
   margin-top: 10px;
-  color: #333;
+  color: #fff;
 }
 
 input[type="text"],
@@ -62,16 +62,16 @@ input[type="date"],
 textarea {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #555;
   border-radius: 5px;
   box-sizing: border-box;
   margin-top: 5px;
-  background-color: #f9f9f9;
-  color: #333;
+  background-color: #444;
+  color: #fff;
 }
 
 button {
-  background-color: #4CAF50;
+  background-color: #44dd66; /* Verde */
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -82,7 +82,7 @@ button {
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #3ca057; /* Tonalidade mais escura do verde */
 }
 
 /* Ajustes para telas maiores */
@@ -108,8 +108,8 @@ button:hover {
 /* Botões secundários */
 #download-excel,
 #sair-button {
-  background-color: #ccc;
-  color: #333;
+  background-color: #333; /* Cor mais escura */
+  color: #fff;
   border: none;
   border-radius: 5px;
   padding: 12px 24px;
@@ -120,5 +120,5 @@ button:hover {
 
 #download-excel:hover,
 #sair-button:hover {
-  background-color: #bbb;
+  background-color: #444; /* Tonalidade mais escura */
 }
