@@ -1,7 +1,3 @@
-# Docker
-# Build a Docker image
-# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
-
 trigger:
 - master
 
@@ -38,8 +34,12 @@ stages:
         vmImage: ubuntu-latest
       steps:
       - script: |
-          echo "Puxando a imagem do Docker Hub..."
+          echo "Parando o contêiner antigo..."
+          docker stop $(docker ps -q --filter ancestor=thiagomartinsemartins/deskflora) || true
+          echo "Removendo o contêiner antigo..."
+          docker rm $(docker ps -aq --filter ancestor=thiagomartinsemartins/deskflora) || true
+          echo "Puxando a nova imagem do Docker Hub..."
           docker pull thiagomartinsemartins/deskflora:$(tag)
-          echo "Iniciando o contêiner..."
+          echo "Iniciando o novo contêiner..."
           docker run -d -p 8080:80 thiagomartinsemartins/deskflora:$(tag)
         displayName: 'Implantar no servidor'
