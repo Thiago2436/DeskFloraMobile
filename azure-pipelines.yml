@@ -35,10 +35,10 @@ stages:
       steps:
         - script: |
             echo "parando container"
-            docker stop $(docker ps -q --filter "ancestor=thiagomartinsemartins/deskflora" --filter "publish=$PORT:80")
+            docker stop $(docker ps -q --filter "ancestor=thiagomartinsemartins/deskflora") 
             echo "Pulling the new image from Docker Hub..."
             docker pull thiagomartinsemartins/deskflora:$(tag)
             echo "Starting the new container..."
             docker run -d -p $PORT:80 thiagomartinsemartins/deskflora:$(tag)
           displayName: 'Deploy container'
-
+#--filter "publish=$PORT:80"
