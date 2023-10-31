@@ -5,7 +5,7 @@
   </head>
   <body>
     <h1># Prancheta Eletrônica para Inventário Florestal</h1>
-    <p>Este projeto é uma prancheta eletrônica para coleta de dados de inventário florestal, desenvolvido por Thiago2436.</p>
+    <p> <br>Este projeto é uma prancheta eletrônica para coleta de dados de inventário florestal, desenvolvido por Thiago2436.</p>
     <p>O código fonte do projeto está disponível no GitHub, e você pode contribuir para o seu desenvolvimento seguindo as instruções abaixo:</p>
        <br>  <h2>Como utilizar o app</h2>
     <p>Você pode utilizar o app através do link abaixo:</p>
