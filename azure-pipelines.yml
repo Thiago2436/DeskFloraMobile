@@ -39,5 +39,5 @@ stages:
       steps:
       - script: |
           docker pull thiagomartinsemartins/deskflora:latest
-          docker run -d -p porta_host:80 thiagomartinsemartins/deskflora:latest
+          docker run -d -p 8080:80 thiagomartinsemartins/deskflora:latest
         displayName: 'Implantar no servidor'
