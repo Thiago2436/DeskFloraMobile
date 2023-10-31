@@ -1,0 +1,30 @@
+name: Atualizar gh-pages com commits do master
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout do código
+      uses: actions/checkout@v2
+      with:
+        ref: master
+    - name: Login no GitHub
+      uses: actions/setup-node@v2.1.5
+      with:
+        github_token: ${{ secrets.GH_PAGES_TOKEN }}
+    - name: Criar novo branch
+      run: |
+        git config --global user.name "${{ github.actor }}"
+        git config --global user.email "thiagomartins.florestal@gmail.com"
+        git checkout -b gh-pages
+       //sudo git push --set-upstream origin gh-pages
+    - name: Fazer merge do código
+      run: |
+        git checkout gh-pages
+        git merge master
+        git push
