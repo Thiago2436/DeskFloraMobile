@@ -34,14 +34,8 @@ stages:
         vmImage: ubuntu-latest
       steps:
         - script: |
-            PORT=8080
-            if lsof -Pi :$PORT -sTCP:LISTEN -t >/dev/null; then
-                echo "Port $PORT is already in use."
-                echo "Stopping the old container using port $PORT..."
-                docker stop $(docker ps -q --filter "ancestor=thiagomartinsemartins/deskflora" --filter "publish=$PORT:80") || true
-            fi
             echo "parando container"
-            docker stop $(docker ps -q --filter "ancestor=thiagomartinsemartins/deskflora" --filter "publish=$PORT:80") || true
+            docker stop $(docker ps -q --filter "ancestor=thiagomartinsemartins/deskflora" --filter "publish=$PORT:80")
             echo "Pulling the new image from Docker Hub..."
             docker pull thiagomartinsemartins/deskflora:$(tag)
             echo "Starting the new container..."
