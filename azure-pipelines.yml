@@ -28,3 +28,16 @@ stages:
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
         tags: '$(tag)'
+- stage: Deploy
+  displayName: Deploy
+  jobs:
+    - job: Deploy
+      displayName: Deploy
+      pool:
+        name: Default
+        vmImage: ubuntu-latest
+      steps:
+      - script: |
+          docker pull thiagomartinsemartins/deskflora:latest
+          docker run -d -p porta_host:80 thiagomartinsemartins/deskflora:latest
+        displayName: 'Implantar no servidor'
