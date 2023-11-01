@@ -44,5 +44,7 @@ stages:
 
             echo "Iniciando o novo contêiner..."
             docker run -d -p 8080:80 --name deskflora thiagomartinsemartins/deskflora:$(tag)
+            echo "verificando containers"
+            docker ps -a
           displayName: 'Deploy do contêiner'
 #--filter "publish=$PORT:80"
