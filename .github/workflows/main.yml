@@ -1,30 +1,60 @@
-name: Atualizar gh-pages com commits do master
+name: CI/CD Pipeline
 
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
-  deploy:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Verificar existência de arquivos essenciais
+        run: |
+          if [ ! -f index.html ]; then
+            echo "Erro: Arquivo index.html não encontrado!"
+            exit 1
+          fi
+
+      - name: Armazenar artefato
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-files
+          path: .
+
+  deploy-gh-pages:
+    needs: build-test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Deploy para GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .  # Publica todos os arquivos HTML, CSS e JS
+
+  notify_failure:
+    if: failure()
+    needs: [build-test, deploy-gh-pages]
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout do código
-      uses: actions/checkout@v2
-      with:
-        ref: master
-    - name: Login no GitHub
-      uses: actions/setup-node@v2.1.5
-      with:
-        github_token: ${{ secrets.GH_PAGES_TOKEN }}
-    - name: Criar novo branch
-      run: |
-        git config --global user.name "${{ github.actor }}"
-        git config --global user.email "thiagomartins.florestal@gmail.com"
-        git checkout -b gh-pages
-       //sudo git push --set-upstream origin gh-pages
-    - name: Fazer merge do código
-      run: |
-        git checkout gh-pages
-        git merge master
-        git push
+      - name: Notificação de Falha
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          to: thiagomartins.florestal@gmail.com
+          from: thiagomartins.florestal@gmail.com
+          subject: "❌ Falha no Pipeline CI/CD"
+          body: "O pipeline falhou! Verifique os logs no GitHub Actions."
